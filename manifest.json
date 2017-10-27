@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "WanderTab",
   "version": "1.0",
-  "description": "A clean looking new tab page, customized by your location with Google Maps.",
+  "description": "A simple, map-based, new tab extension for Google Chrome.",
   "chrome_url_overrides" : { "newtab": "index.html" },
   "permissions": [
   "geolocation",
