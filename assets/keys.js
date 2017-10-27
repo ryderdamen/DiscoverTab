@@ -1,0 +1,1 @@
+var googleMapsApiKey = ""; // Apparently this will work up to 2500 requests per day per IP without an API key

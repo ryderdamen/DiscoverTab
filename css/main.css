@@ -1,0 +1,117 @@
+html {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: #f8f8f8;
+	z-index: -10;
+	overflow: hidden;
+	pointer-events: all;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+	overflow: hidden;
+	z-index: -9;
+}
+
+.dark {
+	background-color: #222;
+	color: #f8f8f8;
+}
+
+.dark-overlay {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(34, 34, 34, 0.7);
+	background-blend-mode: multiply;
+	z-index: -6;
+}
+
+.map {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -8;
+}
+
+.bg-overlay {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: rgba(248, 248, 248, 0.4);
+	background-blend-mode: multiply;
+	z-index: -6;
+}
+
+.map-cover {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #f8f8f8;
+	z-index: -7;
+}
+
+.dark-map-cover {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #222;
+	z-index: -7;
+}
+
+
+
+.inner {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  z-index: 1;
+}
+
+.inner p {
+/*
+	-moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+*/
+}
+
+.inner h1 {
+	text-align: center;
+	font-weight: 100;
+	margin: 0;
+	padding: 0;
+}
+
+.inner h2 {
+	text-align: right;
+	font-weight: 300;
+	font-size: 11px;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+/* Options Page Specific */
+
+.options-inner {
+	min-width: 400px;
+	min-height: 400px;
+	width: 60%;
+	position: absolute;
+	background-color: #f8f8f8;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -45%);
+	padding: 5%;
+}
+
+
