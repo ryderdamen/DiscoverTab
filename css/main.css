@@ -76,11 +76,11 @@ body {
 }
 
 .inner p {
-/*
+
 	-moz-user-select: none;
    -khtml-user-select: none;
    -webkit-user-select: none;
-*/
+
 }
 
 .inner h1 {
@@ -98,20 +98,38 @@ body {
 	padding: 0;
 }
 
-
-
-/* Options Page Specific */
-
-.options-inner {
-	min-width: 400px;
-	min-height: 400px;
-	width: 60%;
+.controls {
+	width: 100%;
+	bottom: 10px;
 	position: absolute;
-	background-color: #f8f8f8;
-	top: 45%;
-	left: 50%;
-	transform: translate(-50%, -45%);
-	padding: 5%;
+	text-align: right;
 }
 
 
+.controls ul {
+	list-style-type: none;
+	text-decoration: none;
+}
+
+.controls ul li {
+	margin: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.controls ul li a {
+	text-decoration: none;
+	font-size: 18px;
+	color: #919191;
+	height: 25px;
+	width: 25px;
+	border-radius: 25px;
+}
+
+.controls ul li a:hover {
+	color: #595959;
+}
+
+#cityName {
+	text-align: left;
+}
