@@ -1,17 +1,120 @@
 /*
-Main.js
+Options.js
+Version: 1.0
+Author: Ryder Damen
+ryderdamen.com/discovertab
 
-1. Retrieve geolocation
-2. On callback with lat and lon, store in JSON, load map
-3. Fade map in to background
-
-Notes: To prevent delays, the map is always 1 load behind the user // TODO: fix this? 
-can't hide map, too many issues with fade in;
-
-// Users should be able to choose their own zoom level
-
-
+This allows users to set their personal options for the plugin
 */
+
+// Lifecycle
+onPageLoad();
+
+// Listener for submit click (since no inline JS is allowed in chrome extensions)
+document.addEventListener('DOMContentLoaded', function() {
+    var submitButton = document.getElementById('submitButton');
+    submitButton.addEventListener('click', function() {
+        onSubmit();
+    });
+});
+
+
+// Functions
+
+function onPageLoad() {
+	// When the page is loaded
+	// Retrieve variables from storage and write them to the view
+	chrome.storage.sync.get(
+		[
+			'discoverTabTheme',
+			'discoverTabUserName',
+			'discoverTabZoom',
+			'discoverTabGmapsApiKey',
+			'discoverTabRandomMode',
+		], function (stored) {
+			
+			// Handling undefined bugs on very first load
+			if (stored.discoverTabUserName === undefined) {
+				document.getElementById("userName").value = "";
+			}
+			else {
+				document.getElementById("userName").value = stored.discoverTabUserName;	
+			}
+			
+			if (stored.discoverTabGmapsApiKey === undefined) {
+				document.getElementById("gmapsApiKey").value = "";
+			}
+			else {
+				document.getElementById("gmapsApiKey").value = stored.discoverTabGmapsApiKey;
+			}
+			
+			document.getElementById("theme").value = stored.discoverTabTheme;
+			document.getElementById("zoom").value = stored.discoverTabZoom;
+			document.getElementById("randomMode").checked = stored.discoverTabRandomMode;
+	});
+}
+
+function goBack() {
+	// Return to the previous window; should we save?
+	window.history.back();
+}
+
+function onSubmit() {
+	// When the submit button is pressed
+	var username = document.getElementById("userName").value;
+	var theme = document.getElementById("theme").value;
+	var zoom = document.getElementById("zoom").value;
+	var gmapsApiKey = document.getElementById("gmapsApiKey").value;
+	var randomMode = document.getElementById("randomMode").checked;
+	console.log('random: ' + randomMode);
+	writePreferences(username, theme, zoom, gmapsApiKey, randomMode);
+}
+
+function writePreferences(username, theme, zoom, gmapsApiKey, randomMode) {
+	// Writes preferences to chrome's storage, and to a javascript temp file
+		// Save to chrome sync'd storage
+        chrome.storage.sync.set({
+	        'discoverTabTheme': theme,
+	        'discoverTabUserName': username,
+	        'discoverTabZoom' : zoom,
+	        'discoverTabGmapsApiKey' : gmapsApiKey,
+	        'discoverTabRandomMode' : randomMode
+	        }, function() {
+		        // TODO, replace this with a toast or something
+		        var button = document.getElementById("submitButton");
+		        var originalBackgroundColor = button.style.backgroundColor;
+		        var originalTextColor = button.style.color;
+		        button.style.backgroundColor = "#00FF7F";
+		        button.style.color = "#FFF";
+		        setTimeout(function(){ 
+			        button.style.backgroundColor = originalBackgroundColor;
+					button.style.color = originalTextColor;
+			         }, 300);
+	        });	    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
 
 // First, get the preferences from settings...
 let pageStylePreference = chrome.storage.sync.get(['pageStyle'], function (result) { return result; });
@@ -110,4 +213,5 @@ function positionCallback(position) {
 	if (!position.coords.latitude) { return; }
 	writeLatitudeLongitude(position.coords.latitude, position.coords.longitude);	    
 }
+*/
 
