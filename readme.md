@@ -1,7 +1,4 @@
-# WanderTab
-A simple, map-based, new tab extension for Google Chrome.
+# DiscoverTab
+A simple, map-based, new tab extension for Google Chrome, with customizable options.	
 
-## TODO
-* Add in tracking
-* Build out options page
-			
+* Cities JSON received from [this repository.](https://gist.github.com/Miserlou/c5cd8364bf9b2420bb29)
