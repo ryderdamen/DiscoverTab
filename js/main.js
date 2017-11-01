@@ -13,8 +13,6 @@ Page Overview:
 
 // NB: We are retriving the last known position of the user, because the callback for the current location is far too long (3 seconds)
 
-// TODO: Implement GMAPS API key; implement random mode
-
 */
 
 
