@@ -16,9 +16,5 @@
   "https://maps.googleapis.com/*"
   ],
   "options_page": "options.html",
-  "content_security_policy": "script-src 'self' https://maps.googleapis.com https://maps.gstatic.com; object-src 'self'",
-  "content_scripts": [{
-     "js": ["js/jquery.min.js", "js/main.js"],
-     "matches": ["http://*/*", "https://*/*"]
-   }]
+  "content_security_policy": "script-src 'self' https://maps.googleapis.com https://maps.gstatic.com; object-src 'self'"
 }

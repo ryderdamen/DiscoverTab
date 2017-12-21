@@ -12,12 +12,50 @@ body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	background-color: transparent;
+	background-color: #f8f8f8;
 }
+
+
+
+.header {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: #FFF;
+	height: 250px;
+}
+
+.header-map {
+	width: 100%;
+	height: 250px;
+	position: absolute;
+}
+
+.header-map-cover {
+	position: absolute;
+	width: 100%;
+	height: 250px;
+	background-color: rgba(248,248,248,0.5);
+	z-index: 10;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 h1 {
 	font-weight: 100;
-	margin-top: 0;
+	margin: 0;
+	font-size: 32px;
 }
 
 h2 {
@@ -33,6 +71,7 @@ a {
 	font-weight: 100;
 }
 
+/*
 table {
 	margin: auto;
 	width: 100%;
@@ -48,13 +87,21 @@ td {
 	margin: 0;
 	display: inline-block;
 }
+*/
 
 .container {
 	position: relative;
-	width: 80%;
+	width: 60%;
+	min-width: 600px;
 	margin: auto;
-	background: #f8f8f8;
-	padding-top: 20px;
+	padding: 50px;
+	padding-top: 50px;
+	margin-bottom: 100px;
+	background: #FFF;
+}
+
+.attribution {
+	margin: 0;
 }
 
 
@@ -70,4 +117,17 @@ td {
 
 .submit-button:focus {
 	outline: none;
+}
+
+.options-table {
+	margin: 25px;
+}
+
+td {
+	padding-top: 15px;
+}
+
+th {
+	padding-top: 25px;
+	text-align: left;
 }

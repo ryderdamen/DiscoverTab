@@ -6,63 +6,62 @@
     <title>DiscoverTab Options</title>
     <link rel="stylesheet" href="css/options.css" type="text/css">
     <script src="js/jquery.min.js"></script>
+    <script src="js/mapStyle.js"></script>
+    <script src="js/notify.min.js"></script>
     <script src="js/options.js"></script>
 </head>
 
 <body>
+	<div class="header">
+		
+		<div class="header-map" id="map"></div>
+		<div class="header-map-cover" id="map-cover"></div>
+		
+	</div><!-- /Header -->
     <div class="container">
         <h1>DiscoverTab Options</h1>
-        <p>Created By <a href="http://ryderdamen.com" target="_blank">Ryder Damen</a></p>
+        <p class="attribution">Created By <a href="http://ryderdamen.com" target="_blank">Ryder Damen</a></p>
         <p>Here are a few options you can customize. Enjoy!</p>
-        <table>
+        
+        <table class="options-table">
             <tr>
-                <td>
-                    <h2>Your Name: </h2>
-                </td>
-                <td>
-                    <p>
-                        <input type="text" id="userName">
-                    </p>
-                </td>
+	            <th>Standard Options</th>
             </tr>
             <tr>
-                <td>
-                    <h2>Page Theme:</h2>
-                </td>
-                <td>
-                    <p>Light<input type="range" min="0" max="1" id="theme">Dark</p>
-                </td>
+	            <td>Your Name</td>
+	            <td><input type="text" id="userName"></td>
             </tr>
             <tr>
-                <td>
-                    <h2>Zoom Level:</h2>
-                </td>
-                <td>
-                    <p>Low<input type="range" min="5" max="17" id="zoom">High</p>
-                </td>
+	            <td>Theme</td>
+	            <td>
+		            <form>
+					  <input type="radio" name="theme" value="0" checked="true"> Light<br>
+					  <input type="radio" name="theme" value="1" id="darkTheme"> Dark<br>
+					</form>
+				</td>
+            </tr>
+			<tr>
+	            <td>Enable Discovery Mode</td>
+	            <td><input type="checkbox" id="randomMode"></td>
+            </tr>
+			
+            <tr>
+	            <th>Advanced Options</th>
+            </tr>
+           <tr>
+	            <td>Zoom Level</td>
+	            <td>Low&nbsp;<input type="range" min="5" max="17" id="zoom">&nbsp;High</td>
             </tr>
             <tr>
-                <td>
-                    <h2>Discover Mode</h2>
-                    <p>Instead of using your location, display random cities in the USA.</p>
-                </td>
-                <td>
-                    <input type="checkbox" id="randomMode">
-                </td>
+	            <td>Google Maps API Key</td>
+	            <td><input type="text" id="gmapsApiKey"></td>
             </tr>
             <tr>
-                <td>
-                    <h2>Google Maps API Key:</h2>
-                    <p>Enter your google maps API Key. For more information on how to get a key, <a href="https://developers.google.com/maps/documentation/javascript/get-api-key">Click here</a>.</p>
-                </td>
-                <td>
-                    <p>
-                        <input type="text" id="gmapsApiKey">
-                    </p>
-                </td>
+	            <td>
+		            <button id="submitButton" class="submit-button">Save Settings</button>
+	            </td>
             </tr>
-        </table>
-        <button id="submitButton" class="submit-button">Save Settings</button>
+	    </table>
     </div>
 </body>
 
